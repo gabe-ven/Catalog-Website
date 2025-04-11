@@ -23,19 +23,6 @@
  *
  */
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
 
@@ -45,51 +32,50 @@ function showCards() {
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
-
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
-
+  animeCatalog.forEach((anime) => {
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
+    editCardContent(nextCard, anime); // Edit title and image
+    addCardClickEvent(nextCard);
     cardContainer.appendChild(nextCard); // Add new card to the container
-  }
+  });
 }
 
-function editCardContent(card, newTitle, newImageURL) {
+function editCardContent(card, anime) {
   card.style.display = "block";
 
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
+  cardHeader.textContent = anime.title;
 
   const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
+  cardImage.src = anime.image;
+  cardImage.alt = anime.title + " Poster";
 
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+  const genre = card.querySelector(".genre");
+  genre.innerHTML = "<strong>Genre 📚:</strong> " + anime.genre;
+
+  const studio = card.querySelector(".studio");
+  studio.innerHTML = "<strong>Studio 🎙️:</strong> " + anime.studio;
+
+  const rating = card.querySelector(".rating");
+  rating.innerHTML = "<strong>Rating ⭐:</strong> " + anime.rating;
+
+  const year = card.querySelector(".year");
+  year.innerHTML = "<strong>Year 📅:</strong> " + anime.year;
+
+  const description = card.querySelector(".description");
+  description.innerHTML = anime.description;
+
+  console.log("new card:", anime.title, "- html: ", card);
+}
+
+function addCardClickEvent(card) {
+  card.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
 }
 
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!"
-  );
-}
 
 function removeLastCard() {
   titles.pop(); // Remove last item in titles array
