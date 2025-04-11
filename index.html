@@ -4,6 +4,10 @@
     <title>Anime Catalog | Home</title>
     <meta name="description" content="A Catalog of Anime Shows" />
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="data.js"></script>
     <!-- Load the data.js file -->
@@ -17,6 +21,15 @@
     </header>
     <div class="description-text">
       <p>Browse. Discover. Enjoy.</p>
+    </div>
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search anime..."
+        onkeyup="searchAnime()"
+      />
+      <button id="filterButton" onclick="filterAction()">☰</button>
     </div>
 
     <!-- Main container where the cards will go -->
