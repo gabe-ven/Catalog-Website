@@ -11,7 +11,7 @@ body {
 }
 
 .main-header {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   padding-bottom: 10px;
 }
 
@@ -72,10 +72,11 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 10; /* ensures it appears above others when overlapping */
+  border-bottom: 5px solid rgb(247, 58, 0);
+  z-index: 10;
 }
 
 .card.flipped {
@@ -177,11 +178,57 @@ ul {
   font-size: 1rem;
   color: white;
   margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 #searchInput:focus {
   outline: none;
+  border-bottom: 2px solid rgb(247, 58, 0);
   box-shadow: none;
+}
+
+.filter-panel {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px;
+  margin-top: 10px;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.hidden {
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: white;
+  margin: 0 5px;
+  gap: 10px;
+}
+
+.filter-group select {
+  background-color: #111010;
+  border: none;
+  padding: 0 20px;
+  height: clamp(40px, 3vh, 40px);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.filter-group select:focus {
+  outline: none;
 }
 
 #filterButton {
@@ -193,6 +240,12 @@ ul {
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  transition: color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#filterButton:hover {
+  color: rgb(247, 58, 0);
 }
 
 #noResultsMessage {

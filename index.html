@@ -26,10 +26,58 @@
       <input
         type="text"
         id="searchInput"
-        placeholder="Search anime..."
+        placeholder="Search..."
         onkeyup="searchAnime()"
       />
-      <button id="filterButton" onclick="filterAction()">☰</button>
+      <button id="filterButton" onclick="toggleFilters()">☰</button>
+    </div>
+
+    <!-- Hidden filters panel -->
+    <div id="filter-panel" class="filter-panel hidden">
+      <div class="filter-group">
+        <label for="genreFilter">Genres</label>
+        <select id="genreFilter">
+          <option>Any</option>
+          <option>Action</option>
+          <option>Adventure</option>
+          <option>Drama</option>
+          <option>Romance</option>
+          <option>Comedy</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="yearFilter">Year</label>
+        <select id="yearFilter">
+          <option>Any</option>
+          <option>Earliest to Latest</option>
+          <option>Latest to Earliest</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="ratingFilter">Rating</label>
+        <select id="ratingFilter">
+          <option>Any</option>
+          <option>Highest Rated</option>
+          <option>Lowest Rated</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="studioFilter">Studio</label>
+        <select id="studioFilter">
+          <option>Bones</option>
+          <option>Wit Studio</option>
+          <option>MAPPA</option>
+          <option>Pierrot</option>
+          <option>Toei Animation</option>
+          <option>ufotable</option>
+          <option>Madhouse</option>
+          <option>David Production</option>
+          <option>A-1 Pictures</option>
+        </select>
+      </div>
     </div>
 
     <!-- Main container where the cards will go -->
@@ -59,9 +107,6 @@
       </div>
     </div>
 
-    <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
-    </div>
+    <div class="footer"></div>
   </body>
 </html>

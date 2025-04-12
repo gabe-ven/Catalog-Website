@@ -309,4 +309,34 @@ const animeCatalog = [
     image: "images/spyxfamily.jpg",
     description: "A spy builds a fake family—unaware of their hidden talents.",
   },
+  {
+    title: "Neon Genesis Evangelion",
+    genre: "Mecha, Psychological",
+    studio: "Gainax",
+    rating: 8.5,
+    year: 1995,
+    image: "images/evangelion.jpg",
+    description:
+      "Teens pilot giant mechs to defend humanity from mysterious beings.",
+  },
+  {
+    title: "Fate/Zero",
+    genre: "Action, Supernatural",
+    studio: "ufotable",
+    rating: 8.7,
+    year: 2011,
+    image: "images/fatezero.jpg",
+    description:
+      "Seven mages summon legendary heroes to fight for the Holy Grail.",
+  },
+  {
+    title: "Sword Art Online",
+    genre: "Action, Adventure",
+    studio: "A-1 Pictures",
+    rating: 7.8,
+    year: 2012,
+    image: "images/sao.jpg",
+    description:
+      "Players are trapped in a virtual reality game and must clear it to escape.",
+  },
 ];

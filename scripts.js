@@ -49,11 +49,6 @@ function addCardClickEvent(card) {
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
 
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
-}
-
 // this function is to search for anime by title
 function searchAnime() {
   const searchQuery = document
@@ -92,4 +87,9 @@ function searchAnime() {
       noResultsMessage.remove();
     }
   }
+}
+
+function toggleFilters() {
+  const panel = document.getElementById("filter-panel");
+  panel.classList.toggle("hidden");
 }
