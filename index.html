@@ -4,36 +4,46 @@
     <title>Anime Catalog | Home</title>
     <meta name="description" content="A Catalog of Anime Shows" />
     <meta charset="UTF-8" />
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
       rel="stylesheet"
     />
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="data.js"></script>
     <!-- Load the data.js file -->
+    <script type="text/javascript" src="data.js"></script>
+    <!-- Load the main JavaScript file -->
     <script type="text/javascript" src="scripts.js" defer></script>
-    <!-- Your main JS file -->
   </head>
 
   <body>
+    <!-- Header Section -->
     <header class="main-header">
       <h1 class="title">AniLog</h1>
     </header>
+
+    <!-- Description Section -->
     <div class="description-text">
       <p>Browse. Discover. Enjoy.</p>
     </div>
+
+    <!-- Search and Filter Section -->
     <div class="search-container">
+      <!-- Search Input -->
       <input
         type="text"
         id="searchInput"
         placeholder="Search..."
         onkeyup="searchAnime()"
       />
+      <!-- Filter Button -->
       <button id="filterButton" onclick="toggleFilters()">☰</button>
     </div>
 
-    <!-- Hidden filters panel -->
+    <!-- Hidden Filters Panel -->
     <div id="filter-panel" class="filter-panel hidden">
+      <!-- Genre Filter -->
       <div class="filter-group">
         <label for="genreFilter">Genre</label>
         <select id="genreFilter" onchange="applyFilters()">
@@ -51,6 +61,7 @@
         </select>
       </div>
 
+      <!-- Studio Filter -->
       <div class="filter-group">
         <label for="studioFilter">Studio</label>
         <select id="studioFilter" onchange="applyFilters()">
@@ -65,15 +76,22 @@
           <option value="david production">David Production</option>
           <option value="a-1 pictures">A-1 Pictures</option>
           <option value="trigger">Trigger</option>
-          <option value="kyoto animation">Kyoto Animation</option>
           <option value="sunrise">Sunrise</option>
           <option value="production i.g">Production I.G</option>
-          <option value="j.c. staff">J.C. Staff</option>
           <option value="cloverworks">CloverWorks</option>
           <option value="tms entertainment">TMS Entertainment</option>
+          <option value="science saru">Science SARU</option>
+          <option value="white fox">White Fox</option>
+          <option value="j.c.staff">J.C.Staff</option>
+          <option value="kyoto animation">Kyoto Animation</option>
+          <option value="gainax">Gainax</option>
+          <option value="olm">OLM</option>
+          <option value="kinema citrus">Kinema Citrus</option>
+          <option value="manglobe">Manglobe</option>
         </select>
       </div>
 
+      <!-- Year Sorter -->
       <div class="filter-group">
         <label for="yearSorter">Year</label>
         <select id="yearSorter" onchange="applyFilters()">
@@ -83,6 +101,7 @@
         </select>
       </div>
 
+      <!-- Rating Sorter -->
       <div class="filter-group">
         <label for="ratingSorter">Rating</label>
         <select id="ratingSorter" onchange="applyFilters()">
@@ -91,14 +110,25 @@
           <option value="lowest">Lowest</option>
         </select>
       </div>
+
+      <!-- Alphabetical Sorter -->
+      <div class="filter-group">
+        <label for="alphabeticalSorter">Alphabetical</label>
+        <select id="alphabeticalSorter" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="a-z">A-Z</option>
+          <option value="z-a">Z-A</option>
+        </select>
+      </div>
     </div>
-    <!-- Main container where the cards will go -->
+
+    <!-- Main Container for Anime Cards -->
     <div id="anime-cards-container">
       <div id="card-container"></div>
       <!-- Placeholder for dynamic cards -->
     </div>
 
-    <!-- Card template that is hidden initially -->
+    <!-- Card Template (Hidden Initially) -->
     <div class="card" style="display: none">
       <div class="card-front">
         <img src="" alt="Anime" />
@@ -122,6 +152,7 @@
       </div>
     </div>
 
+    <!-- Footer Section -->
     <div class="footer"></div>
   </body>
 </html>

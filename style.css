@@ -116,7 +116,7 @@ body {
 }
 
 .card:hover .card-front video {
-  opacity: 1;
+  opacity: 0.75;
 }
 
 .card-back {

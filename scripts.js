@@ -10,6 +10,7 @@ function showCards() {
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(nextCard, anime); // Edit title and image
     addCardClickEvent(nextCard);
+    handleClip(nextCard);
     cardContainer.appendChild(nextCard); // Add new card to the container
   });
 }
@@ -56,38 +57,30 @@ function editCardContent(card, anime) {
 /* ==============================================================
                      SHOW BACK OF CARD
 ===============================================================*/
-let currentlyPlaying = null;
 function addCardClickEvent(card) {
   card.addEventListener("click", () => {
     card.classList.toggle("flipped");
   });
+}
 
+/* ==============================================================
+                     HANDLE CLIP PLAYING
+===============================================================*/
+function handleClip(card) {
   const video = card.querySelector("video");
 
-  card.addEventListener("mouseover", () => {
-    if (video) {
-      if (currentlyPlaying && currentlyPlaying !== video) {
-        currentlyPlaying.pause();
-        currentlyPlaying.currentTime = 30;
-      }
+  if (!video) return;
 
-      video.currentTime = 30;
-      video.play();
-      currentlyPlaying = video;
-    }
+  card.addEventListener("mouseover", () => {
+    video.currentTime = 20;
+    video.play();
   });
 
   card.addEventListener("mouseout", () => {
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-      currentlyPlaying = null;
-    }
+    video.pause();
+    video.currentTime = 0;
   });
 }
-
-// this calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
 
 /* ==============================================================
                 SEARCH ANIME BY TITLE (SEARCH BAR)
@@ -149,10 +142,13 @@ function applyFilters() {
   const selectedGenre = document
     .getElementById("genreFilter")
     .value.toLowerCase();
-  const yearOrder = document.getElementById("yearSorter").value.toLowerCase();
-  const ratingOrder = document
-    .getElementById("ratingSorter")
-    .value.toLowerCase();
+  const yearSorter = document.getElementById("yearSorter");
+  const ratingSorter = document.getElementById("ratingSorter");
+  const alphabeticalSorter = document.getElementById("alphabeticalSorter");
+
+  const yearOrder = yearSorter.value.toLowerCase();
+  const ratingOrder = ratingSorter.value.toLowerCase();
+  const alphabeticalOrder = alphabeticalSorter.value.toLowerCase();
   const cardContainer = document.getElementById("card-container");
 
   // filter catalog based on selected studio and genre
@@ -168,16 +164,23 @@ function applyFilters() {
   // sort filtered anime based on year and rating
   const sortedAnime = filteredAnime.sort((a, b) => {
     if (yearOrder === "newest") {
-      if (b.year !== a.year) return b.year - a.year; // sort by year (newest first)
+      return b.year - a.year; // newest to oldest
     } else if (yearOrder === "oldest") {
-      if (a.year !== b.year) return a.year - b.year; // sort by year (oldest first)
+      return a.year - b.year; // oldest to newest
     }
 
-    // if years are the same, then sort by rating
+    // Handle rating sorting
     if (ratingOrder === "highest") {
-      return b.rating - a.rating; // highest to lowest
+      return b.rating - a.rating; // highest rating
     } else if (ratingOrder === "lowest") {
-      return a.rating - b.rating; // lowest to highest
+      return a.rating - b.rating; // lowest rating
+    }
+
+    // Handle alphabetical sorting
+    if (alphabeticalOrder === "a-z") {
+      return a.title.localeCompare(b.title); // sort A-Z
+    } else if (alphabeticalOrder === "z-a") {
+      return b.title.localeCompare(a.title); // sort Z-A
     }
 
     // no sorting
@@ -190,6 +193,44 @@ function applyFilters() {
     const nextCard = document.querySelector(".card").cloneNode(true);
     editCardContent(nextCard, anime);
     addCardClickEvent(nextCard);
+    handleClip(nextCard);
     cardContainer.appendChild(nextCard);
   });
 }
+
+/* ==============================================================
+                    RUN SHOWCARDS()/RESET SORTING
+===============================================================*/
+// the purpose of this is to display all the cards when the page loads
+// and sort dropdowns so that selecting one clears the others
+document.addEventListener("DOMContentLoaded", () => {
+  showCards();
+
+  const yearSorter = document.getElementById("yearSorter");
+  const ratingSorter = document.getElementById("ratingSorter");
+  const alphabeticalSorter = document.getElementById("alphabeticalSorter");
+
+  yearSorter.addEventListener("change", () => {
+    if (yearSorter.value !== "") {
+      ratingSorter.value = "";
+      alphabeticalSorter.value = "";
+    }
+    applyFilters();
+  });
+
+  ratingSorter.addEventListener("change", () => {
+    if (ratingSorter.value !== "") {
+      yearSorter.value = "";
+      alphabeticalSorter.value = "";
+    }
+    applyFilters();
+  });
+
+  alphabeticalSorter.addEventListener("change", () => {
+    if (alphabeticalSorter.value !== "") {
+      yearSorter.value = "";
+      ratingSorter.value = "";
+    }
+    applyFilters();
+  });
+});
