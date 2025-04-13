@@ -35,51 +35,63 @@
     <!-- Hidden filters panel -->
     <div id="filter-panel" class="filter-panel hidden">
       <div class="filter-group">
-        <label for="genreFilter">Genres</label>
-        <select id="genreFilter">
-          <option>Any</option>
-          <option>Action</option>
-          <option>Adventure</option>
-          <option>Drama</option>
-          <option>Romance</option>
-          <option>Comedy</option>
-        </select>
-      </div>
-
-      <div class="filter-group">
-        <label for="yearFilter">Year</label>
-        <select id="yearFilter">
-          <option>Any</option>
-          <option>Earliest to Latest</option>
-          <option>Latest to Earliest</option>
-        </select>
-      </div>
-
-      <div class="filter-group">
-        <label for="ratingFilter">Rating</label>
-        <select id="ratingFilter">
-          <option>Any</option>
-          <option>Highest Rated</option>
-          <option>Lowest Rated</option>
+        <label for="genreFilter">Genre</label>
+        <select id="genreFilter" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="action">Action</option>
+          <option value="adventure">Adventure</option>
+          <option value="drama">Drama</option>
+          <option value="romance">Romance</option>
+          <option value="comedy">Comedy</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="supernatural">Supernatural</option>
+          <option value="horror">Horror</option>
+          <option value="mystery">Mystery</option>
+          <option value="sci-fi">Sci-Fi</option>
         </select>
       </div>
 
       <div class="filter-group">
         <label for="studioFilter">Studio</label>
-        <select id="studioFilter">
-          <option>Bones</option>
-          <option>Wit Studio</option>
-          <option>MAPPA</option>
-          <option>Pierrot</option>
-          <option>Toei Animation</option>
-          <option>ufotable</option>
-          <option>Madhouse</option>
-          <option>David Production</option>
-          <option>A-1 Pictures</option>
+        <select id="studioFilter" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="bones">Bones</option>
+          <option value="wit studio">Wit Studio</option>
+          <option value="mappa">MAPPA</option>
+          <option value="pierrot">Pierrot</option>
+          <option value="toei animation">Toei Animation</option>
+          <option value="ufotable">ufotable</option>
+          <option value="madhouse">Madhouse</option>
+          <option value="david production">David Production</option>
+          <option value="a-1 pictures">A-1 Pictures</option>
+          <option value="trigger">Trigger</option>
+          <option value="kyoto animation">Kyoto Animation</option>
+          <option value="sunrise">Sunrise</option>
+          <option value="production i.g">Production I.G</option>
+          <option value="j.c. staff">J.C. Staff</option>
+          <option value="cloverworks">CloverWorks</option>
+          <option value="tms entertainment">TMS Entertainment</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="yearSorter">Year</label>
+        <select id="yearSorter" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="ratingSorter">Rating</label>
+        <select id="ratingSorter" onchange="applyFilters()">
+          <option value="">Any</option>
+          <option value="highest">Highest</option>
+          <option value="lowest">Lowest</option>
         </select>
       </div>
     </div>
-
     <!-- Main container where the cards will go -->
     <div id="anime-cards-container">
       <div id="card-container"></div>
@@ -90,6 +102,9 @@
     <div class="card" style="display: none">
       <div class="card-front">
         <img src="" alt="Anime" />
+        <video preload="none" muted loop playsinline style="display: none">
+          <source src="" type="video/mp4" />
+        </video>
         <div class="card-content">
           <h2></h2>
         </div>

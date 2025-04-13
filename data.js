@@ -6,6 +6,7 @@ const animeCatalog = [
     rating: 9.2,
     year: 2009,
     image: "images/fullmetal.jpg",
+    clip: "clips/fullmetal.mp4",
     description:
       "Two brothers seek the Philosopher's Stone after a failed alchemy experiment.",
   },
@@ -16,6 +17,7 @@ const animeCatalog = [
     rating: 9.1,
     year: 2013,
     image: "images/aot.webp",
+    clip: "clips/aot.mp4",
     description:
       "Humans fight for survival against towering man-eating titans.",
   },
@@ -26,6 +28,7 @@ const animeCatalog = [
     rating: 8.6,
     year: 2004,
     image: "images/bleach.jpg",
+    clip: "clips/bleach.mp4",
     description: "A teen gains Soul Reaper powers and battles evil spirits.",
   },
   {
@@ -35,6 +38,7 @@ const animeCatalog = [
     rating: 8.8,
     year: 1999,
     image: "images/onepiece.jpg",
+    clip: "clips/onepiece.mp4",
     description:
       "Luffy sails the seas with his crew to find the legendary treasure.",
   },
@@ -45,6 +49,7 @@ const animeCatalog = [
     rating: 8.8,
     year: 2019,
     image: "images/vinland.jpg",
+    clip: "clips/vinland.mp4",
     description: "A young warrior seeks revenge during the Viking era.",
   },
   {
@@ -54,6 +59,7 @@ const animeCatalog = [
     rating: 8.5,
     year: 2019,
     image: "images/demonslayer.jpg",
+    clip: "clips/demonslayer.mp4",
     description: "A boy joins a demon-slaying corps to avenge his family.",
   },
   {
@@ -63,6 +69,7 @@ const animeCatalog = [
     rating: 8.6,
     year: 2006,
     image: "images/deathnote.jpg",
+    clip: "clips/deathnote.mp4",
     description: "A high schooler gains a deadly notebook and plays god.",
   },
   {
@@ -72,6 +79,7 @@ const animeCatalog = [
     rating: 8.7,
     year: 2020,
     image: "images/jjk.webp",
+    clip: "clips/jjk.mp4",
     description: "A student battles cursed spirits with supernatural powers.",
   },
   {
@@ -81,6 +89,7 @@ const animeCatalog = [
     rating: 8.0,
     year: 2016,
     image: "images/mha.jpg",
+    clip: "clips/mha.mp4",
     description: "A quirkless boy trains to become the greatest hero.",
   },
   {
@@ -90,6 +99,7 @@ const animeCatalog = [
     rating: 8.9,
     year: 2011,
     image: "images/hxh.jpg",
+    clip: "clips/hxh.mp4",
     description: "Gon seeks his father and faces deadly trials as a Hunter.",
   },
   {
@@ -99,6 +109,7 @@ const animeCatalog = [
     rating: 8.7,
     year: 2016,
     image: "images/mob.jpg",
+    clip: "clips/mob.mp4",
     description: "A powerful psychic boy tries to live a normal life.",
   },
   {
@@ -108,6 +119,7 @@ const animeCatalog = [
     rating: 8.5,
     year: 2015,
     image: "images/onepunch.jpg",
+    clip: "clips/onepunch.mp4",
     description:
       "A hero defeats enemies with a single punch—and is bored by it.",
   },
@@ -118,6 +130,7 @@ const animeCatalog = [
     rating: 8.8,
     year: 2012,
     image: "images/jojos.jpg",
+    clip: "clips/jojos.mp4",
     description: "Generations of Joestars battle supernatural foes in style.",
   },
   {
@@ -127,6 +140,7 @@ const animeCatalog = [
     rating: 7.9,
     year: 2014,
     image: "images/tokyo.jpg",
+    clip: "clips/tokyo.mp4",
     description:
       "A college student becomes half-ghoul and fights for identity.",
   },
@@ -137,6 +151,7 @@ const animeCatalog = [
     rating: 8.3,
     year: 2002,
     image: "images/naruto.jpg",
+    clip: "clips/naruto.mp4",
     description: "An outcast ninja dreams of becoming the Hokage.",
   },
   {
@@ -146,6 +161,7 @@ const animeCatalog = [
     rating: 8.5,
     year: 2022,
     image: "images/edgerunners.jpg",
+    clip: "clips/edgerunners.mp4",
     description:
       "A street kid becomes an Edgerunner in a tech-dystopian world.",
   },
@@ -156,6 +172,7 @@ const animeCatalog = [
     rating: 8.3,
     year: 2021,
     image: "images/86.jpg",
+    clip: "clips/86.mp4",
     description:
       "A war is fought by unmanned drones—except they're not really unmanned.",
   },
@@ -166,6 +183,7 @@ const animeCatalog = [
     rating: 8.1,
     year: 2016,
     image: "images/rezero.jpg",
+    clip: "clips/rezero.mp4",
     description:
       "A boy is transported to a fantasy world and trapped in a time loop.",
   },
@@ -176,6 +194,7 @@ const animeCatalog = [
     rating: 8.7,
     year: 2024,
     image: "images/sololeveling.jpg",
+    clip: "clips/sololeveling.mp4",
     description:
       "A weak hunter becomes the world’s strongest through a system.",
   },
@@ -186,6 +205,7 @@ const animeCatalog = [
     rating: 8.2,
     year: 2024,
     image: "images/dandadan.jpg",
+    clip: "clips/dandadan.mp4",
     description:
       "Two teens dive into bizarre battles involving ghosts and aliens.",
   },
@@ -196,6 +216,7 @@ const animeCatalog = [
     rating: 8.3,
     year: 2025,
     image: "images/sakamoto.jpg",
+    clip: "clips/sakamoto.mp4",
     description:
       "A retired hitman turned family man is dragged back into action.",
   },
@@ -206,6 +227,7 @@ const animeCatalog = [
     rating: 8.4,
     year: 2024,
     image: "images/kaiju8.jpg",
+    clip: "clips/kaiju8.mp4",
     description:
       "A monster cleanup worker gains kaiju powers and fights for humanity.",
   },
@@ -216,6 +238,7 @@ const animeCatalog = [
     rating: 8.8,
     year: 1998,
     image: "images/cowboy.jpg",
+    clip: "clips/cowboy.mp4",
     description: "Bounty hunters chase criminals across the galaxy in style.",
   },
   {
@@ -225,6 +248,7 @@ const animeCatalog = [
     rating: 8.9,
     year: 2006,
     image: "images/codegeass.jpg",
+    clip: "clips/codegeass.mp4",
     description: "A prince with a mysterious power rebels against an empire.",
   },
   {
@@ -234,6 +258,7 @@ const animeCatalog = [
     rating: 9.1,
     year: 2011,
     image: "images/steinsgate.jpg",
+    clip: "clips/steinsgate.mp4",
     description: "A scientist discovers time travel with dire consequences.",
   },
   {
@@ -243,6 +268,7 @@ const animeCatalog = [
     rating: 8.5,
     year: 2016,
     image: "images/erased.jpg",
+    clip: "clips/erased.mp4",
     description: "A man travels back in time to prevent a tragedy.",
   },
   {
@@ -252,6 +278,7 @@ const animeCatalog = [
     rating: 8.4,
     year: 2014,
     image: "images/parasyte.jpg",
+    clip: "clips/parasyte.mp4",
     description: "A teen fights alien parasites that take over human bodies.",
   },
   {
@@ -261,6 +288,7 @@ const animeCatalog = [
     rating: 8.6,
     year: 2014,
     image: "images/yourlie.jpg",
+    clip: "clips/yourlie.mp4",
     description: "A pianist rediscovers music and emotion through love.",
   },
   {
@@ -270,6 +298,7 @@ const animeCatalog = [
     rating: 8.0,
     year: 2008,
     image: "images/toradora.jpg",
+    clip: "clips/toradora.mp4",
     description: "Two classmates team up to help each other find love.",
   },
   {
@@ -279,6 +308,7 @@ const animeCatalog = [
     rating: 8.4,
     year: 2019,
     image: "images/neverland.jpg",
+    clip: "clips/neverland.mp4",
     description: "Children uncover a dark secret and plot their escape.",
   },
   {
@@ -288,6 +318,7 @@ const animeCatalog = [
     rating: 8.2,
     year: 2019,
     image: "images/drstone.jpg",
+    clip: "clips/drstone.mp4",
     description:
       "A genius teen rebuilds civilization after humanity turns to stone.",
   },
@@ -298,6 +329,7 @@ const animeCatalog = [
     rating: 8.1,
     year: 2017,
     image: "images/blackclover.jpg",
+    clip: "clips/blackclover.mp4",
     description: "A boy with no magic strives to become the Wizard King.",
   },
   {
@@ -307,6 +339,7 @@ const animeCatalog = [
     rating: 8.6,
     year: 2022,
     image: "images/spyxfamily.jpg",
+    clip: "clips/spyxfamily.mp4",
     description: "A spy builds a fake family—unaware of their hidden talents.",
   },
   {
@@ -316,6 +349,7 @@ const animeCatalog = [
     rating: 8.5,
     year: 1995,
     image: "images/evangelion.jpg",
+    clip: "clips/evangelion.mp4",
     description:
       "Teens pilot giant mechs to defend humanity from mysterious beings.",
   },
@@ -326,6 +360,7 @@ const animeCatalog = [
     rating: 8.7,
     year: 2011,
     image: "images/fatezero.jpg",
+    clip: "clips/fatezero.mp4",
     description:
       "Seven mages summon legendary heroes to fight for the Holy Grail.",
   },
@@ -336,6 +371,7 @@ const animeCatalog = [
     rating: 7.8,
     year: 2012,
     image: "images/sao.jpg",
+    clip: "clips/sao.mp4",
     description:
       "Players are trapped in a virtual reality game and must clear it to escape.",
   },
