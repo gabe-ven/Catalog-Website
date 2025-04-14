@@ -193,10 +193,10 @@ const animeCatalog = [
     studio: "A-1 Pictures",
     rating: 8.7,
     year: 2024,
-    image: "images/sololeveling.jpg",
+    image: "images/sololeveling.webp",
     clip: "clips/sololeveling.mp4",
     description:
-      "A weak hunter becomes the world’s strongest through a system.",
+      "A weak hunter becomes the world's strongest through a system.",
   },
   {
     title: "Dandadan",
