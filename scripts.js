@@ -104,7 +104,7 @@ function editCardContent(card, anime) {
   const video = card.querySelector("video");
   // if clip exists, set video source and make visible
   if (anime.clip) {
-    video.src = anime.clip;
+    video.dataset.src = anime.clip;
     video.style.display = "block";
   }
   // hide video display if no clip exists
@@ -135,8 +135,12 @@ function handleClip(card) {
   // return if there is no video
   if (!video) return;
 
-  // on hover, play the video from 20 seconds in
+  // load video dynamically on hover
   card.addEventListener("mouseover", () => {
+    if (!video.src) {
+      // if video is not loaded yet
+      video.src = video.dataset.src; // set video source from data-src
+    }
     video.currentTime = 20;
     video.play();
   });
